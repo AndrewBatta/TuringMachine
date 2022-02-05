@@ -47,9 +47,12 @@ namespace TuringMachine
                         stack.Push(int.Parse(instruction));
                     }
 
-                    CheckStackCount(ref stack);
-                    _logger.LogInformation($"Final value: {stack.Pop()}");
                 }, stoppingToken);
+
+
+                CheckStackCount(ref stack);
+                _logger.LogInformation($"Final value: {stack.Pop()}");
+
             }
             catch (Exception ex)
             {
